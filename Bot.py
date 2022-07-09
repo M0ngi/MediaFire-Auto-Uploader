@@ -1,10 +1,26 @@
-from fastapi import Body
+"""
+    Copyright (C) 2022  Mohamed Mongi Saidane
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+    
+    Author contact: saidanemongi@gmail.com
+"""
+
 import requests, json
 from bs4 import BeautifulSoup
 from exceptions import BadLogin, FileNotFoundException, UnableToGetActionToken, UploadFileException
 from logger import Logger
 from utils import SHA256sum
 from os import path
+
 
 class MediaFireBot:
     def __init__(self, email: str, password: str, logger : Logger = None, debug : bool = False) -> None:
